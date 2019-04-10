@@ -12,7 +12,9 @@ export class PokemonDetail extends Component {
     }
 
     componentWillMount() {
-        getPokemon()
+
+        const { pokemonId } = this.props.match.params
+        getPokemon(pokemonId)
             .then(pokemon => {
                 console.log(pokemon)
                 this.setState({ pokemon })

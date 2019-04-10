@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getPokemons } from '../services/pokeapi'
 import { Card } from 'antd';
+import { Link } from 'react-router-dom'
 
 
 const { Meta } = Card;
@@ -33,7 +34,9 @@ class PokemonsList extends Component {
                         style={{ width: 240 }}
                     >
                         <Meta
-                            title={pok.name}
+                            title={
+                                <Link to={`/pokemons/${pok.name}`}>{pok.name}</Link>
+                            }
                             description={pok.url}
                         />
                     </Card>

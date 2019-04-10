@@ -11,8 +11,8 @@ export const getPokemons = () => {
         })
 }
 
-export const getPokemon = () => {
-    return axios.get(`${apiURL}4/`)
+export const getPokemon = (pokemonId) => {
+    return axios.get(`${apiURL}${pokemonId}/`)
         .then(res => {
             return res.data
         }).catch(e => {
